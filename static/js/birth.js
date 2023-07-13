@@ -1,4 +1,4 @@
-/ connect the console log to the javascript file
+// connect the console log to the javascript file
 console.log("birth.js")
 
 // Place url in a constant variable
@@ -81,32 +81,32 @@ d3.json(edu_url).then(function (edu_data) {
     })
 });
 
-// create a function to populate sample metadata class with info
-function buildMetaData(id) {
-    d3.json(url).then(function (data) {
-        let meta = data.EduLevelCode
+// // create a function to populate sample metadata class with info
+// function buildMetaData(id) {
+//     d3.json(url).then(function (data) {
+//         let meta = data.EduLevelCode
 
-        let resultArray = data.filter(sampleObj => sampleObj.data == data);
-        console.log("resultArray")
-        // console.log(resultArray)
+//         let resultArray = data.filter(sampleObj => sampleObj.data == data);
+//         console.log("resultArray")
+//         // console.log(resultArray)
 
-        // assign result variable to grab the first index of the resulting array
-        let result = resultArray[0];
+//         // assign result variable to grab the first index of the resulting array
+//         let result = resultArray[0];
 
-        // assign a box variable where the data will display
-        let box = d3.select("#sample-metadata");
+//         // assign a box variable where the data will display
+//         let box = d3.select("#sample-metadata");
 
-        // clears the metadata in the console log so it can be filled with the next pull
-        box.html("");
+//         // clears the metadata in the console log so it can be filled with the next pull
+//         box.html("");
         
-        // loop for the display box and format to uppercase
-        Object.keys(result).forEach((key) => {
-            box.append("h6").text(key.toUpperCase() + ":" + result[key]);
+//         // loop for the display box and format to uppercase
+//         Object.keys(result).forEach((key) => {
+//             box.append("h6").text(key.toUpperCase() + ":" + result[key]);
            
-          });
-    })
-};
+//           });
+//     })
+// };
 
-function optionChanged(meta){
-    buildMetaData(meta)
-};
+// function optionChanged(meta){
+//     buildMetaData(meta)
+// };

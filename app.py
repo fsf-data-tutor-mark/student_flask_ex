@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, render_template
-import requests
 import datetime as dt
 import pandas as pd
 
@@ -43,14 +42,8 @@ def gender():
 def education():
 
     edu = list(test.EduLevel.unique())
-    print(edu)
     return jsonify(edu)
-
-    plot.bar(x='Gender', ylabel='Number of Births', title='Total number of births group by year and gender', color=['blue', 'green'])
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-    #plot.bar(x='Gender', ylabel='Number of Births', title='Total number of births group by year and gender', color=['blue', 'green'])
